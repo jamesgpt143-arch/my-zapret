@@ -1,19 +1,19 @@
 {
-  "generated_at": "2026-06-12T11:10:13Z",
+  "generated_at": "2026-06-12T11:34:21Z",
   "releases": [
     {
       "tag": "v72.20260307",
       "name": "zapret v72.20260307",
       "prerelease": false,
       "created_at": "2026-03-07T05:28:58Z",
-      "updated_at": "2026-06-12T11:08:15Z",
+      "updated_at": "2026-06-12T11:34:08Z",
       "published_at": "2026-06-12T02:44:27Z",
       "url": "https://github.com/jamesgpt143-arch/my-zapret/releases/tag/v72.20260307",
       "assets": [
         {
-          "url": "https://api.github.com/repos/jamesgpt143-arch/my-zapret/releases/assets/445591431",
-          "id": 445591431,
-          "node_id": "RA_kwDOS4HOls4ajy-H",
+          "url": "https://api.github.com/repos/jamesgpt143-arch/my-zapret/releases/assets/445627258",
+          "id": 445627258,
+          "node_id": "RA_kwDOS4HOls4aj7t6",
           "name": "zapret_v72.20260307_mips64_octeonplus.zip",
           "label": "",
           "uploader": {
@@ -39,11 +39,11 @@
           },
           "content_type": "application/zip",
           "state": "uploaded",
-          "size": 450308,
-          "digest": "sha256:2cc2e1d0f395ec2ba88fb07e4d72d92763c874c4da01ba795c578a5be85f5a77",
+          "size": 450329,
+          "digest": "sha256:d8de945c7eef115ab83d976ae9700790a137ef58ee09288100ed73fa52a41536",
           "download_count": 0,
-          "created_at": "2026-06-12T10:40:24Z",
-          "updated_at": "2026-06-12T10:40:24Z",
+          "created_at": "2026-06-12T11:34:08Z",
+          "updated_at": "2026-06-12T11:34:08Z",
           "browser_download_url": "https://github.com/jamesgpt143-arch/my-zapret/releases/download/v72.20260307/zapret_v72.20260307_mips64_octeonplus.zip"
         }
       ]

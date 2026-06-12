@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-06-12T11:10:13Z",
+  "generated_at": "2026-06-12T11:34:21Z",
   "releases": [
     {
       "id": 338344850,
@@ -13,191 +13,191 @@
       "url": "https://github.com/jamesgpt143-arch/my-zapret/releases/tag/v72.20260307",
       "assets": [
         {
-          "id": 445591451,
+          "id": 445627268,
           "name": "zapret_v72.20260307_aarch64_cortex-a53.zip",
-          "size": 435834,
+          "size": 435832,
           "content_type": "application/zip",
           "browser_download_url": "https://github.com/jamesgpt143-arch/my-zapret/releases/download/v72.20260307/zapret_v72.20260307_aarch64_cortex-a53.zip"
         },
         {
-          "id": 445591445,
+          "id": 445627266,
           "name": "zapret_v72.20260307_aarch64_cortex-a72.zip",
-          "size": 436052,
+          "size": 436060,
           "content_type": "application/zip",
           "browser_download_url": "https://github.com/jamesgpt143-arch/my-zapret/releases/download/v72.20260307/zapret_v72.20260307_aarch64_cortex-a72.zip"
         },
         {
-          "id": 445591448,
+          "id": 445627272,
           "name": "zapret_v72.20260307_aarch64_cortex-a76.zip",
-          "size": 436077,
+          "size": 436085,
           "content_type": "application/zip",
           "browser_download_url": "https://github.com/jamesgpt143-arch/my-zapret/releases/download/v72.20260307/zapret_v72.20260307_aarch64_cortex-a76.zip"
         },
         {
-          "id": 445591437,
+          "id": 445627261,
           "name": "zapret_v72.20260307_aarch64_generic.zip",
-          "size": 436108,
+          "size": 436122,
           "content_type": "application/zip",
           "browser_download_url": "https://github.com/jamesgpt143-arch/my-zapret/releases/download/v72.20260307/zapret_v72.20260307_aarch64_generic.zip"
         },
         {
-          "id": 445591441,
+          "id": 445627276,
           "name": "zapret_v72.20260307_arm_arm1176jzf-s_vfp.zip",
-          "size": 418637,
+          "size": 418669,
           "content_type": "application/zip",
           "browser_download_url": "https://github.com/jamesgpt143-arch/my-zapret/releases/download/v72.20260307/zapret_v72.20260307_arm_arm1176jzf-s_vfp.zip"
         },
         {
-          "id": 445591446,
+          "id": 445627263,
           "name": "zapret_v72.20260307_arm_arm926ej-s.zip",
-          "size": 419753,
+          "size": 419770,
           "content_type": "application/zip",
           "browser_download_url": "https://github.com/jamesgpt143-arch/my-zapret/releases/download/v72.20260307/zapret_v72.20260307_arm_arm926ej-s.zip"
         },
         {
-          "id": 445591438,
+          "id": 445627269,
           "name": "zapret_v72.20260307_arm_cortex-a15_neon-vfpv4.zip",
-          "size": 417520,
+          "size": 417499,
           "content_type": "application/zip",
           "browser_download_url": "https://github.com/jamesgpt143-arch/my-zapret/releases/download/v72.20260307/zapret_v72.20260307_arm_cortex-a15_neon-vfpv4.zip"
         },
         {
-          "id": 445591439,
+          "id": 445627273,
           "name": "zapret_v72.20260307_arm_cortex-a5_vfpv4.zip",
-          "size": 418285,
+          "size": 418315,
           "content_type": "application/zip",
           "browser_download_url": "https://github.com/jamesgpt143-arch/my-zapret/releases/download/v72.20260307/zapret_v72.20260307_arm_cortex-a5_vfpv4.zip"
         },
         {
-          "id": 445591432,
+          "id": 445627265,
           "name": "zapret_v72.20260307_arm_cortex-a7.zip",
-          "size": 417411,
+          "size": 417440,
           "content_type": "application/zip",
           "browser_download_url": "https://github.com/jamesgpt143-arch/my-zapret/releases/download/v72.20260307/zapret_v72.20260307_arm_cortex-a7.zip"
         },
         {
-          "id": 445591433,
+          "id": 445627264,
           "name": "zapret_v72.20260307_arm_cortex-a7_neon-vfpv4.zip",
-          "size": 417549,
+          "size": 417583,
           "content_type": "application/zip",
           "browser_download_url": "https://github.com/jamesgpt143-arch/my-zapret/releases/download/v72.20260307/zapret_v72.20260307_arm_cortex-a7_neon-vfpv4.zip"
         },
         {
-          "id": 445591452,
+          "id": 445627253,
           "name": "zapret_v72.20260307_arm_cortex-a7_vfpv4.zip",
-          "size": 417379,
+          "size": 417439,
           "content_type": "application/zip",
           "browser_download_url": "https://github.com/jamesgpt143-arch/my-zapret/releases/download/v72.20260307/zapret_v72.20260307_arm_cortex-a7_vfpv4.zip"
         },
         {
-          "id": 445591435,
+          "id": 445627259,
           "name": "zapret_v72.20260307_arm_cortex-a8_vfpv3.zip",
-          "size": 418009,
+          "size": 418008,
           "content_type": "application/zip",
           "browser_download_url": "https://github.com/jamesgpt143-arch/my-zapret/releases/download/v72.20260307/zapret_v72.20260307_arm_cortex-a8_vfpv3.zip"
         },
         {
-          "id": 445591444,
+          "id": 445627275,
           "name": "zapret_v72.20260307_arm_cortex-a9.zip",
-          "size": 417766,
+          "size": 417804,
           "content_type": "application/zip",
           "browser_download_url": "https://github.com/jamesgpt143-arch/my-zapret/releases/download/v72.20260307/zapret_v72.20260307_arm_cortex-a9.zip"
         },
         {
-          "id": 445591427,
+          "id": 445627257,
           "name": "zapret_v72.20260307_arm_cortex-a9_neon.zip",
-          "size": 417883,
+          "size": 417908,
           "content_type": "application/zip",
           "browser_download_url": "https://github.com/jamesgpt143-arch/my-zapret/releases/download/v72.20260307/zapret_v72.20260307_arm_cortex-a9_neon.zip"
         },
         {
-          "id": 445591450,
+          "id": 445627274,
           "name": "zapret_v72.20260307_arm_cortex-a9_vfpv3-d16.zip",
-          "size": 207521,
+          "size": 207514,
           "content_type": "application/zip",
           "browser_download_url": "https://github.com/jamesgpt143-arch/my-zapret/releases/download/v72.20260307/zapret_v72.20260307_arm_cortex-a9_vfpv3-d16.zip"
         },
         {
-          "id": 445591440,
+          "id": 445627260,
           "name": "zapret_v72.20260307_arm_fa526.zip",
-          "size": 419583,
+          "size": 419621,
           "content_type": "application/zip",
           "browser_download_url": "https://github.com/jamesgpt143-arch/my-zapret/releases/download/v72.20260307/zapret_v72.20260307_arm_fa526.zip"
         },
         {
-          "id": 445591436,
+          "id": 445627262,
           "name": "zapret_v72.20260307_arm_xscale.zip",
-          "size": 419791,
+          "size": 419877,
           "content_type": "application/zip",
           "browser_download_url": "https://github.com/jamesgpt143-arch/my-zapret/releases/download/v72.20260307/zapret_v72.20260307_arm_xscale.zip"
         },
         {
-          "id": 445591431,
+          "id": 445627258,
           "name": "zapret_v72.20260307_mips64_octeonplus.zip",
-          "size": 450308,
+          "size": 450329,
           "content_type": "application/zip",
           "browser_download_url": "https://github.com/jamesgpt143-arch/my-zapret/releases/download/v72.20260307/zapret_v72.20260307_mips64_octeonplus.zip"
         },
         {
-          "id": 445591443,
+          "id": 445627270,
           "name": "zapret_v72.20260307_mipsel_24kc.zip",
-          "size": 402679,
+          "size": 402695,
           "content_type": "application/zip",
           "browser_download_url": "https://github.com/jamesgpt143-arch/my-zapret/releases/download/v72.20260307/zapret_v72.20260307_mipsel_24kc.zip"
         },
         {
-          "id": 445591447,
+          "id": 445627256,
           "name": "zapret_v72.20260307_mipsel_24kc_24kf.zip",
-          "size": 402663,
+          "size": 402675,
           "content_type": "application/zip",
           "browser_download_url": "https://github.com/jamesgpt143-arch/my-zapret/releases/download/v72.20260307/zapret_v72.20260307_mipsel_24kc_24kf.zip"
         },
         {
-          "id": 445591434,
+          "id": 445627251,
           "name": "zapret_v72.20260307_mipsel_74kc.zip",
-          "size": 403813,
+          "size": 403938,
           "content_type": "application/zip",
           "browser_download_url": "https://github.com/jamesgpt143-arch/my-zapret/releases/download/v72.20260307/zapret_v72.20260307_mipsel_74kc.zip"
         },
         {
-          "id": 445591453,
+          "id": 445627271,
           "name": "zapret_v72.20260307_mipsel_mips32.zip",
-          "size": 426819,
+          "size": 426827,
           "content_type": "application/zip",
           "browser_download_url": "https://github.com/jamesgpt143-arch/my-zapret/releases/download/v72.20260307/zapret_v72.20260307_mipsel_mips32.zip"
         },
         {
-          "id": 445591429,
+          "id": 445627255,
           "name": "zapret_v72.20260307_mips_24kc.zip",
-          "size": 402252,
+          "size": 402272,
           "content_type": "application/zip",
           "browser_download_url": "https://github.com/jamesgpt143-arch/my-zapret/releases/download/v72.20260307/zapret_v72.20260307_mips_24kc.zip"
         },
         {
-          "id": 445591430,
+          "id": 445627267,
           "name": "zapret_v72.20260307_mips_4kec.zip",
-          "size": 200528,
+          "size": 200239,
           "content_type": "application/zip",
           "browser_download_url": "https://github.com/jamesgpt143-arch/my-zapret/releases/download/v72.20260307/zapret_v72.20260307_mips_4kec.zip"
         },
         {
-          "id": 445591442,
+          "id": 445627254,
           "name": "zapret_v72.20260307_mips_mips32.zip",
-          "size": 425657,
+          "size": 425713,
           "content_type": "application/zip",
           "browser_download_url": "https://github.com/jamesgpt143-arch/my-zapret/releases/download/v72.20260307/zapret_v72.20260307_mips_mips32.zip"
         },
         {
-          "id": 445591449,
+          "id": 445627252,
           "name": "zapret_v72.20260307_riscv64_generic.zip",
-          "size": 242348,
+          "size": 242349,
           "content_type": "application/zip",
           "browser_download_url": "https://github.com/jamesgpt143-arch/my-zapret/releases/download/v72.20260307/zapret_v72.20260307_riscv64_generic.zip"
         },
         {
-          "id": 445591426,
+          "id": 445627249,
           "name": "zapret_v72.20260307_x86_64.zip",
-          "size": 432998,
+          "size": 433034,
           "content_type": "application/zip",
           "browser_download_url": "https://github.com/jamesgpt143-arch/my-zapret/releases/download/v72.20260307/zapret_v72.20260307_x86_64.zip"
         }

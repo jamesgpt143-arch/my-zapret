@@ -1,19 +1,19 @@
 {
-  "generated_at": "2026-06-12T11:10:13Z",
+  "generated_at": "2026-06-12T11:34:21Z",
   "releases": [
     {
       "tag": "v72.20260307",
       "name": "zapret v72.20260307",
       "prerelease": false,
       "created_at": "2026-03-07T05:28:58Z",
-      "updated_at": "2026-06-12T11:08:15Z",
+      "updated_at": "2026-06-12T11:34:08Z",
       "published_at": "2026-06-12T02:44:27Z",
       "url": "https://github.com/jamesgpt143-arch/my-zapret/releases/tag/v72.20260307",
       "assets": [
         {
-          "url": "https://api.github.com/repos/jamesgpt143-arch/my-zapret/releases/assets/445591435",
-          "id": 445591435,
-          "node_id": "RA_kwDOS4HOls4ajy-L",
+          "url": "https://api.github.com/repos/jamesgpt143-arch/my-zapret/releases/assets/445627259",
+          "id": 445627259,
+          "node_id": "RA_kwDOS4HOls4aj7t7",
           "name": "zapret_v72.20260307_arm_cortex-a8_vfpv3.zip",
           "label": "",
           "uploader": {
@@ -39,11 +39,11 @@
           },
           "content_type": "application/zip",
           "state": "uploaded",
-          "size": 418009,
-          "digest": "sha256:94fc3c515e6ef9b5840ca50fea00ceac99415bb0f4c4e0042438d8279eb69f92",
+          "size": 418008,
+          "digest": "sha256:2e1572666c3486ccd8d8effd73b44c5803616617da65b666f96289a3b28f3a39",
           "download_count": 0,
-          "created_at": "2026-06-12T10:40:24Z",
-          "updated_at": "2026-06-12T10:40:24Z",
+          "created_at": "2026-06-12T11:34:08Z",
+          "updated_at": "2026-06-12T11:34:08Z",
           "browser_download_url": "https://github.com/jamesgpt143-arch/my-zapret/releases/download/v72.20260307/zapret_v72.20260307_arm_cortex-a8_vfpv3.zip"
         }
       ]
