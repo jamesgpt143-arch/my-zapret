@@ -400,7 +400,7 @@ jobs:
           TAG: ${{ needs.check.outputs.tag }}
         with:
           draft: ${{ env.TEST_BUILD == 'true' || env.FAKE_BUILD == 'true' }}
-          prerelease: true
+          prerelease: false
           tag_name: v${{ needs.build.outputs.pkgver }}${{ env.TAG_SUFFIX }}
           name: zapret v${{ needs.build.outputs.pkgver }}
           body: |
