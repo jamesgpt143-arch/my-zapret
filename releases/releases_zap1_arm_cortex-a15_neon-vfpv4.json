@@ -1,19 +1,19 @@
 {
-  "generated_at": "2026-06-12T03:53:40Z",
+  "generated_at": "2026-06-12T04:54:00Z",
   "releases": [
     {
       "tag": "v72.20260307",
       "name": "zapret v72.20260307",
-      "prerelease": false,
+      "prerelease": true,
       "created_at": "2026-03-07T05:28:58Z",
-      "updated_at": "2026-06-12T03:53:32Z",
+      "updated_at": "2026-06-12T04:53:50Z",
       "published_at": "2026-06-12T02:44:27Z",
       "url": "https://github.com/jamesgpt143-arch/my-zapret/releases/tag/v72.20260307",
       "assets": [
         {
-          "url": "https://api.github.com/repos/jamesgpt143-arch/my-zapret/releases/assets/445282163",
-          "id": 445282163,
-          "node_id": "RA_kwDOS4HOls4aindz",
+          "url": "https://api.github.com/repos/jamesgpt143-arch/my-zapret/releases/assets/445352948",
+          "id": 445352948,
+          "node_id": "RA_kwDOS4HOls4ai4v0",
           "name": "zapret_v72.20260307_arm_cortex-a15_neon-vfpv4.zip",
           "label": "",
           "uploader": {
@@ -40,10 +40,10 @@
           "content_type": "application/zip",
           "state": "uploaded",
           "size": 418887,
-          "digest": "sha256:de2767bca400fbaeb29bc269d96ab8d6a47d1eba318cbd31875818c3758e81df",
+          "digest": "sha256:233b508ebb84fc3f806b1df24abf5259377e3861589319b3986f2f7f1a104bfb",
           "download_count": 0,
-          "created_at": "2026-06-12T02:48:20Z",
-          "updated_at": "2026-06-12T02:48:20Z",
+          "created_at": "2026-06-12T04:53:50Z",
+          "updated_at": "2026-06-12T04:53:50Z",
           "browser_download_url": "https://github.com/jamesgpt143-arch/my-zapret/releases/download/v72.20260307/zapret_v72.20260307_arm_cortex-a15_neon-vfpv4.zip"
         }
       ]
