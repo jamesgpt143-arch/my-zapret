@@ -1,7 +1,7 @@
 #!/bin/sh
 
 echo "==========================================="
-echo " Zapret OpenWrt - Smart Unli Data Installer"
+echo " FlowVPN OpenWrt - Smart Unli Data Installer"
 echo "==========================================="
 
 echo "Detecting router architecture..."
@@ -44,6 +44,6 @@ cd /tmp
 rm -rf zapret_temp
 
 echo "==========================================="
-echo "Zapret Installation Complete!"
+echo "FlowVPN Installation Complete!"
 echo "You can now go to OpenWrt LuCI Web UI to configure it."
 echo "==========================================="

@@ -1,7 +1,7 @@
 {
 	"admin/services/zapret": {
-		"title": "Zapret",
-		"order": 61,
+		"title": "FlowVPN",
+		"order": 1,
 		"action": {
 			"type": "alias",
 			"path": "admin/services/zapret/service"

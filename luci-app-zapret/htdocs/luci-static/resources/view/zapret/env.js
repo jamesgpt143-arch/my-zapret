@@ -4,7 +4,7 @@
 return baseclass.extend({
     packager          : { },
     appName           : 'zapret',
-    AppName           : 'Zapret',
+    AppName           : 'FlowVPN',
     execPath          : '/etc/init.d/zapret',
     appDir            : '/opt/zapret',
     syncCfgPath       : '/opt/zapret/sync_config.sh',
