@@ -125,12 +125,19 @@ if [ $ZAPRET_CFG_NAME = "zapret" ]; then
 	
 	local sni_mode="$( uci -q get $ZAPRET_CFG_SEC.SNI_MODE )"
 	local custom_sni="$( uci -q get $ZAPRET_CFG_SEC.CUSTOM_SNI )"
+	local block_quic="$( uci -q get $ZAPRET_CFG_SEC.BLOCK_QUIC )"
+	
+	local quic_opt=""
+	if [ "$block_quic" != "0" ]; then
+		quic_opt=" --new --filter-udp=443 --dpi-desync=drop"
+	fi
+
 	if [ -n "$sni_mode" ]; then
 		local target_sni="opensignal.com"
 		if [ "$sni_mode" = "custom" ]; then
 			target_sni="${custom_sni:-opensignal.com}"
 		fi
-		local my_opt="--dpi-desync=fake --dpi-desync-fooling=md5sig,badsum --dpi-desync-any-protocol=1 --dpi-desync-cutoff=d3 --dpi-desync-fake-tls-mod=sni=$target_sni"
+		local my_opt="--dpi-desync=fake --dpi-desync-fooling=md5sig,badsum --dpi-desync-any-protocol=1 --dpi-desync-cutoff=d3 --dpi-desync-fake-tls-mod=sni=$target_sni$quic_opt"
 		uncomment_param NFQWS_OPT
 		append_param NFQWS_OPT
 		set_param_value_str NFQWS_OPT "$my_opt"

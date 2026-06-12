@@ -122,6 +122,10 @@ return view.extend({
         o.depends('SNI_MODE', 'custom');
         o.rmempty = true;
         o.default = 'opensignal.com';
+
+        o = s.taboption(tabname, form.Flag, 'BLOCK_QUIC', _('Block UDP 443 (Disable QUIC)'));
+        o.rmempty = false;
+        o.default = 1;
         
         /* AutoHostList settings */
 
