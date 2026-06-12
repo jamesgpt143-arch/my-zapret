@@ -122,7 +122,21 @@ if [ $ZAPRET_CFG_NAME = "zapret" ]; then
 	sync_param NFQWS_UDP_PKT_IN str
 	sync_param NFQWS_PORTS_TCP_KEEPALIVE str
 	sync_param NFQWS_PORTS_UDP_KEEPALIVE str
-	sync_param NFQWS_OPT str
+	
+	local sni_mode="$( uci -q get $ZAPRET_CFG_SEC.SNI_MODE )"
+	local custom_sni="$( uci -q get $ZAPRET_CFG_SEC.CUSTOM_SNI )"
+	if [ -n "$sni_mode" ]; then
+		local target_sni="opensignal.com"
+		if [ "$sni_mode" = "custom" ]; then
+			target_sni="${custom_sni:-opensignal.com}"
+		fi
+		local my_opt="--dpi-desync=fake --dpi-desync-fooling=md5sig,badsum --dpi-desync-any-protocol=1 --dpi-desync-cutoff=d3 --dpi-desync-fake-tls-mod=sni=$target_sni"
+		uncomment_param NFQWS_OPT
+		append_param NFQWS_OPT
+		set_param_value_str NFQWS_OPT "$my_opt"
+	else
+		sync_param NFQWS_OPT str
+	fi
 fi
 if [ $ZAPRET_CFG_NAME = "zapret2" ]; then
 	sync_param NFQWS2_ENABLE

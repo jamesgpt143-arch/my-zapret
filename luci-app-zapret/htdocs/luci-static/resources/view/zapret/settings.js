@@ -45,87 +45,7 @@ return view.extend({
         tabname = 'main_settings'; 
         s.tab(tabname, _('Main settings'));
 
-        o = s.taboption(tabname, form.ListValue, 'FWTYPE', _('FWTYPE'));
-        o.value('nftables', 'nftables');
-        //o.value('iptables', 'iptables');
-        //o.value('ipfw',     'ipfw');
-
-        o = s.taboption(tabname, form.Flag, 'POSTNAT', _('POSTNAT'));
-        o.rmempty = false;
-        o.default = 1;
-
-        o = s.taboption(tabname, form.ListValue, 'FLOWOFFLOAD', _('FLOWOFFLOAD'));
-        o.value('donttouch', 'donttouch');
-        o.value('none',      'none');
-        o.value('software',  'software');
-        o.value('hardware',  'hardware');
-
-        o = s.taboption(tabname, form.Flag, 'INIT_APPLY_FW', _('INIT_APPLY_FW'));
-        o.rmempty = false;
-        o.default = 0;
-
-        o = s.taboption(tabname, form.Flag, 'DISABLE_IPV4', _('DISABLE_IPV4'));
-        o.rmempty = false;
-        o.default = 1;
-
-        o = s.taboption(tabname, form.Flag, 'DISABLE_IPV6', _('DISABLE_IPV6'));
-        o.rmempty = false;
-        o.default = 0;
-
-        o = s.taboption(tabname, form.Flag, 'FILTER_TTL_EXPIRED_ICMP', 'FILTER_TTL_EXPIRED_ICMP');
-        o.rmempty = false;
-        o.default = 1;
-
-        //o = s.taboption(tabname, form.ListValue, 'MODE_FILTER', _('MODE_FILTER'));
-        //o.value('none',         'none');
-        //o.value('ipset',        'ipset');
-        //o.value('hostlist',     'hostlist');
-        //o.value('autohostlist', 'autohostlist');
-
-        o = s.taboption(tabname, form.Value, 'WS_USER', _('WS_USER'));
-        o.rmempty  = false;
-        o.datatype = 'string';
-
-        o = s.taboption(tabname, form.Flag, 'DAEMON_LOG_ENABLE', _('DAEMON_LOG_ENABLE'));
-        o.rmempty = false;
-        o.default = 0;
-
-        let current_size = uci.get(tools.appName, 'config', 'DAEMON_LOG_SIZE_MAX') || '0';
-        let has_valid_value = false;
-        let size_list = [ 500, 1000, 1500, 2000, 2500, 3000, 4000, 5000, 7000 ];
-        if (current_size && current_size != '0') {
-            try {
-                current_size = parseInt(current_size, 10); 
-                if (!isNaN(current_size) && current_size > 0) {
-                    has_valid_value = true;
-                    if (!size_list.includes(current_size)) {
-                        size_list.push(current_size);
-                        size_list.sort((a, b) => a - b);
-                    }
-                }
-            } catch(e) {
-                has_valid_value = false;
-            }    
-        }
-        o = s.taboption(tabname, form.ListValue, 'DAEMON_LOG_SIZE_MAX', _('DAEMON_LOG_SIZE_MAX'));
-        o.rmempty = false;
-        if (!has_valid_value) {
-            o.value('', '');
-            o.default = '';
-        }
-        for (let idx = 0; idx < size_list.length; idx++) {
-            let fsize = size_list[idx];
-            o.value('' + fsize, fsize + ' KB');
-            if (has_valid_value && fsize === current_size) {
-                o.default = '' + fsize;
-            }
-        }
-        o.validate = function(section_id, value) {
-            if (!value || value === '') {
-                return _('Please select maximum log size');
-            }
-            return true;
-        };
+        /* Removed advanced main settings for simplicity */
 
         /* NFQWS_OPT_DESYNC tab */
 
@@ -193,91 +113,15 @@ return view.extend({
         o.rmempty = false;
         o.default = 1;
 
-        o = s.taboption(tabname, form.Value, 'DESYNC_MARK', _('DESYNC_MARK'));
-        //o.description = _("nfqws option for DPI desync attack");
-        o.rmempty     = false;
-        o.datatype    = 'string';
+        o = s.taboption(tabname, form.ListValue, 'SNI_MODE', _('SNI Configuration'));
+        o.value('smart_unli', 'Smart Unli Data');
+        o.value('custom', 'Custom');
+        o.default = 'smart_unli';
 
-        o = s.taboption(tabname, form.Value, 'DESYNC_MARK_POSTNAT', _('DESYNC_MARK_POSTNAT'));
-        //o.description = _("nfqws option for DPI desync attack");
-        o.rmempty     = false;
-        o.datatype    = 'string';
-
-        o = s.taboption(tabname, form.Value, 'FILTER_MARK', _('FILTER_MARK'));
-        o.rmempty     = false;
-        o.validate = function(section_id, value) { return true; };
-        o.write = function(section_id, value) { return form.Value.prototype.write.call(this, section_id, (value == null || value.trim() == '') ? "\t" : value.trim()); };
-        
-        if (tools.appName == 'zapret2') {
-            o = s.taboption(tabname, form.Value, 'NFQWS2_PORTS_TCP', _('NFQWS2_PORTS_TCP'));
-        } else {
-            o = s.taboption(tabname, form.Value, 'NFQWS_PORTS_TCP', _('NFQWS_PORTS_TCP'));
-        }
-        o.rmempty     = false;
-        o.datatype    = 'string';
-
-        if (tools.appName == 'zapret2') {
-            o = s.taboption(tabname, form.Value, 'NFQWS2_PORTS_UDP', _('NFQWS2_PORTS_UDP'));
-        } else {
-            o = s.taboption(tabname, form.Value, 'NFQWS_PORTS_UDP', _('NFQWS_PORTS_UDP'));
-        }
-        o.rmempty     = false;
-        o.datatype    = 'string';
-
-        if (tools.appName == 'zapret2') {
-            o = s.taboption(tabname, form.Value, 'NFQWS2_TCP_PKT_OUT', _('NFQWS2_TCP_PKT_OUT'));
-        } else {
-            o = s.taboption(tabname, form.Value, 'NFQWS_TCP_PKT_OUT', _('NFQWS_TCP_PKT_OUT'));
-        }
-        o.rmempty     = false;
-        o.datatype    = 'string';
-
-        if (tools.appName == 'zapret2') {
-            o = s.taboption(tabname, form.Value, 'NFQWS2_TCP_PKT_IN', _('NFQWS2_TCP_PKT_IN'));
-        } else {
-            o = s.taboption(tabname, form.Value, 'NFQWS_TCP_PKT_IN', _('NFQWS_TCP_PKT_IN'));
-        }
-        o.rmempty     = false;
-        o.datatype    = 'string';
-
-        if (tools.appName == 'zapret2') {
-            o = s.taboption(tabname, form.Value, 'NFQWS2_UDP_PKT_OUT', _('NFQWS2_UDP_PKT_OUT'));
-        } else {
-            o = s.taboption(tabname, form.Value, 'NFQWS_UDP_PKT_OUT', _('NFQWS_UDP_PKT_OUT'));
-        }
-        o.rmempty     = false;
-        o.datatype    = 'string';
-
-        if (tools.appName == 'zapret2') {
-            o = s.taboption(tabname, form.Value, 'NFQWS2_UDP_PKT_IN', _('NFQWS2_UDP_PKT_IN'));
-        } else {
-            o = s.taboption(tabname, form.Value, 'NFQWS_UDP_PKT_IN', _('NFQWS_UDP_PKT_IN'));
-        }
-        o.rmempty     = false;
-        o.datatype    = 'string';
-
-        if (tools.appName == 'zapret2') {
-            o = s.taboption(tabname, form.Value, 'NFQWS2_PORTS_TCP_KEEPALIVE', _('NFQWS2_PORTS_TCP_KEEPALIVE'));
-        } else {
-            o = s.taboption(tabname, form.Value, 'NFQWS_PORTS_TCP_KEEPALIVE', _('NFQWS_PORTS_TCP_KEEPALIVE'));
-        }
-        o.rmempty     = false;
-        o.datatype    = 'uinteger';
-
-        if (tools.appName == 'zapret2') {
-            o = s.taboption(tabname, form.Value, 'NFQWS2_PORTS_UDP_KEEPALIVE', _('NFQWS2_PORTS_UDP_KEEPALIVE'));
-        } else {
-            o = s.taboption(tabname, form.Value, 'NFQWS_PORTS_UDP_KEEPALIVE', _('NFQWS_PORTS_UDP_KEEPALIVE'));
-        }
-        o.rmempty     = false;
-        o.datatype    = 'uinteger';
-
-        add_delim(s, tools.nfqws_opt_url);
-        if (tools.appName == 'zapret2') {
-            add_param(s, 'NFQWS2_OPT', null, 21, 2);
-        } else {
-            add_param(s, 'NFQWS_OPT', null, 21, 2);
-        }
+        o = s.taboption(tabname, form.Value, 'CUSTOM_SNI', _('Custom SNI'));
+        o.depends('SNI_MODE', 'custom');
+        o.rmempty = true;
+        o.default = 'opensignal.com';
         
         /* AutoHostList settings */
 

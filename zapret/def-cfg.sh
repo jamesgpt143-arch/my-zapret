@@ -472,13 +472,29 @@ function set_cfg_nfqws_strat
 			commit $cfgname
 		EOF
 	fi
+	if [ "$strat" = "custom_by_user" ]; then
+		uci batch <<-EOF
+			set $cfgname.config.NFQWS_PORTS_TCP='80,443'
+			set $cfgname.config.NFQWS_PORTS_UDP='443'
+			set $cfgname.config.NFQWS_OPT="
+				--comment=Strategy__$strat
+				
+				--dpi-desync=fake
+				--dpi-desync-fooling=md5sig,badsum
+				--dpi-desync-any-protocol=1
+				--dpi-desync-cutoff=d3
+				--dpi-desync-fake-tls-mod=sni=opensignal.com
+			"
+			commit $cfgname
+		EOF
+	fi
 	return 0
 }
 
 function set_cfg_default_values
 {
 	local opt_flags=${1:--}
-	local opt_strat=${2:-v6_by_StressOzz}
+	local opt_strat=${2:-custom_by_user}
 	local cfgname=${3:-$ZAPRET_CFG_NAME}
 
 	if ! echo "$opt_flags" | grep -q "(skip_base)"; then
