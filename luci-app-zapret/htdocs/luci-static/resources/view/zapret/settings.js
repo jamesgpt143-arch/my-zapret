@@ -40,13 +40,6 @@ return view.extend({
         s.anonymous = true;
         s.addremove = false;
 
-        /* Main settings tab */
-
-        tabname = 'main_settings'; 
-        s.tab(tabname, _('Main settings'));
-
-        /* Removed advanced main settings for simplicity */
-
         /* NFQWS_OPT_DESYNC tab */
 
         tabname = 'nfqws_params';
@@ -127,220 +120,27 @@ return view.extend({
         o.rmempty = false;
         o.default = 1;
         
-        /* AutoHostList settings */
+        /* Bandwidth Limiter tab */
 
-        tabname = 'autohostlist_tab'; 
-        s.tab(tabname, _('AutoHostList'));
+        tabname = 'bandwidth_limiter'; 
+        s.tab(tabname, _('Bandwidth Limiter'));
 
-        o = s.taboption(tabname, form.Flag, 'MODE_FILTER', _('Use AutoHostList mode'));
+        o = s.taboption(tabname, form.Flag, 'QOS_ENABLE', _('Enable Speed Limit'));
         o.rmempty = false;
+        o.default = 0;
+
+        o = s.taboption(tabname, form.Value, 'QOS_DOWNLOAD', _('Download Speed (Mbps)'));
+        o.depends('QOS_ENABLE', '1');
+        o.rmempty = true;
+        o.datatype = 'uinteger';
         o.default = '0';
-        o.validate = function(section_id, value) { return true; };
-        o.load = function(section_id) {
-            return uci.load(tools.appName).then(L.bind(function() {
-                var v = uci.get(tools.appName, section_id, 'MODE_FILTER');
-                return (v === 'autohostlist') ? '1' : '0';
-            }, this));
-        };
-        o.write = function(section_id, value) {
-            return uci.set(tools.appName, section_id, 'MODE_FILTER', value === '1' ? 'autohostlist' : 'hostlist');
-        };
 
-        if (tools.appName == 'zapret2') {
-            o = s.taboption(tabname, form.Value, 'AUTOHOSTLIST_INCOMING_MAXSEQ', _('INCOMING_MAXSEQ'));
-            o.rmempty     = false;
-            o.datatype    = 'uinteger';
-
-            o = s.taboption(tabname, form.Value, 'AUTOHOSTLIST_RETRANS_MAXSEQ', _('RETRANS_MAXSEQ'));
-            o.rmempty     = false;
-            o.datatype    = 'uinteger';
-
-            o = s.taboption(tabname, form.Value, 'AUTOHOSTLIST_RETRANS_RESET', _('RETRANS_RESET'));
-            o.rmempty     = false;
-            o.datatype    = 'uinteger';
-        }
-        
-        o = s.taboption(tabname, form.Value, 'AUTOHOSTLIST_RETRANS_THRESHOLD', _('RETRANS_THRESHOLD'));
-        o.rmempty     = false;
-        o.datatype    = 'uinteger';
-
-        o = s.taboption(tabname, form.Value, 'AUTOHOSTLIST_FAIL_THRESHOLD', _('FAIL_THRESHOLD'));
-        o.rmempty     = false;
-        o.datatype    = 'uinteger';
-
-        o = s.taboption(tabname, form.Value, 'AUTOHOSTLIST_FAIL_TIME', _('FAIL_TIME'));
-        o.rmempty     = false;
-        o.datatype    = 'uinteger';
-
-        if (tools.appName == 'zapret2') {
-            o = s.taboption(tabname, form.Value, 'AUTOHOSTLIST_UDP_IN', _('UDP_IN'));
-            o.rmempty     = false;
-            o.datatype    = 'uinteger';
-
-            o = s.taboption(tabname, form.Value, 'AUTOHOSTLIST_UDP_OUT', _('UDP_OUT'));
-            o.rmempty     = false;
-            o.datatype    = 'uinteger';
-        }
-
-        o = s.taboption(tabname, form.Button, '_auto_host_btn', _('Auto host list entries'));
-        o.inputtitle = _('Edit');
-        o.inputstyle = 'edit btn';
-        o.description = tools.autoHostListFN;
-        o.onclick = () => new tools.fileEditDialog({
-            file: tools.autoHostListFN,
-            title: _('Auto host list'),
-            desc: '',
-            rows: 15,
-        }).show();
-
-        o = s.taboption(tabname, form.Flag, 'AUTOHOSTLIST_DEBUGLOG', _('DEBUGLOG'));
-        o.rmempty     = false;
-        o.default     = 0;
-
-        o = s.taboption(tabname, form.Button, '_auto_host_debug_btn', _('Auto host debug list entries'));
-        o.inputtitle = _('Edit');
-        o.inputstyle = 'edit btn';
-        o.description = tools.autoHostListDbgFN;
-        o.onclick = () => new tools.fileEditDialog({
-            file: tools.autoHostListDbgFN,
-            title: _('Auto host debug list'),
-            desc: '',
-            rows: 15,
-        }).show();
-        
-        /* HostList settings */
-
-        tabname = 'hostlist_tab'; 
-        s.tab(tabname, _('Host lists'));
-
-        o = s.taboption(tabname, form.Button, '_google_entries_btn', _('Google hostname entries'));
-        o.inputtitle = _('Edit');
-        o.inputstyle = 'edit btn';
-        o.description = tools.hostsGoogleFN;
-        o.onclick = () => new tools.fileEditDialog({
-            file: tools.hostsGoogleFN,
-            title: _('Google hostname entries'),
-            desc: _('One hostname per line.<br />Examples:'),
-            aux: '<code>youtube.com<br />googlevideo.com</code>',
-            rows: 15,
-        }).show();
-
-        o = s.taboption(tabname, form.Button, '_user_entries_btn', _('User hostname entries <HOSTLIST>'));
-        o.inputtitle = _('Edit');
-        o.inputstyle = 'edit btn';
-        o.description = tools.hostsUserFN;
-        o.onclick = () => new tools.fileEditDialog({
-            file: tools.hostsUserFN,
-            title: _('User entries'),
-            desc: _('One hostname per line.<br />Examples:'),
-            aux: '<code>domain.net<br />sub.domain.com<br />facebook.com</code>',
-            rows: 15,
-        }).show();
-
-        o = s.taboption(tabname, form.Button, '_user_excluded_entries_btn', _('User excluded hostname entries'));
-        o.inputtitle = _('Edit');
-        o.inputstyle = 'edit btn';
-        o.description = tools.hostsUserExcludeFN;
-        o.onclick = () => new tools.fileEditDialog({
-            file: tools.hostsUserExcludeFN,
-            title: _('User excluded entries'),
-            desc: _('One hostname per line.<br />Examples:'),
-            aux: '<code>domain.net<br />sub.domain.com<br />gosuslugi.ru</code>',
-            rows: 15,
-        }).show();
-        
-        add_delim(s);
-
-        o = s.taboption(tabname, form.Button, '_ip_exclude_filter_btn', _('Excluded IP entries'));
-        o.inputtitle = _('Edit');
-        o.inputstyle = 'edit btn';
-        o.description = tools.iplstExcludeFN;
-        o.onclick = () => new tools.fileEditDialog({
-            file: tools.iplstExcludeFN,
-            title: _('Excluded IP filter'),
-            desc: _('Patterns can be strings or regular expressions. Each pattern in a separate line<br />Examples:'),
-            aux: '<code>128.199.0.0/16<br />34.217.90.52<br />162.13.190.77</code>',
-            rows: 15,
-        }).show();
-
-        o = s.taboption(tabname, form.Button, '_user_ip_filter_btn', _('User IP entries'));
-        o.inputtitle = _('Edit');
-        o.inputstyle = 'edit btn';
-        o.description = tools.iplstUserFN;
-        o.onclick = () => new tools.fileEditDialog({
-            file: tools.iplstUserFN,
-            title: _('User IP filter'),
-            desc: _('Patterns can be strings or regular expressions. Each pattern in a separate line<br />Examples:'),
-            aux: '<code>128.199.0.0/16<br />34.217.90.52<br />162.13.190.77</code>',
-            rows: 15,
-        }).show();
-
-        o = s.taboption(tabname, form.Button, '_user_excluded_ip_filter_btn', _('User excluded IP entries'));
-        o.inputtitle = _('Edit');
-        o.inputstyle = 'edit btn';
-        o.description = tools.iplstUserExcludeFN;
-        o.onclick = () => new tools.fileEditDialog({
-            file: tools.iplstUserExcludeFN,
-            title: _('User excluded IP filter'),
-            desc: _('Patterns can be strings or regular expressions. Each pattern in a separate line<br />Examples:'),
-            aux: '<code>128.199.0.0/16<br />34.217.90.52<br />162.13.190.77</code>',
-            rows: 15,
-        }).show();
-        
-        add_delim(s);
-        
-        for (let num = 1; num <= tools.custFileMax; num++) {
-            let fn = tools.custFileTemplate.format(num.toString());
-            let name = _('Custom file #' + num);
-            o = s.taboption(tabname, form.Button, '_cust_file%d_btn'.format(num), name);
-            o.inputtitle = _('Edit');
-            o.inputstyle = 'edit btn';
-            o.description = fn;
-            o.onclick = () => new tools.fileEditDialog({ file: fn, title: name, rows: 15}).show();
-        }
-
-        /* custom.d files */
-
-        tabname = 'custom_d_tab'; 
-        s.tab(tabname, 'custom.d');
-
-        o = s.taboption(tabname, form.Flag, 'DISABLE_CUSTOM', _('Use custom.d scripts'));
-        o.rmempty = false;
+        o = s.taboption(tabname, form.Value, 'QOS_UPLOAD', _('Upload Speed (Mbps)'));
+        o.depends('QOS_ENABLE', '1');
+        o.rmempty = true;
+        o.datatype = 'uinteger';
         o.default = '0';
-        o.validate = function(section_id, value) { return true; };
-        o.load = function(section_id) {
-            return uci.load(tools.appName).then(L.bind(function() {
-                var v = uci.get(tools.appName, section_id, 'DISABLE_CUSTOM');
-                return (v === '1') ? '0' : '1';
-            }, this));
-        };
-        o.write = function(section_id, value) {
-            return uci.set(tools.appName, section_id, 'DISABLE_CUSTOM', value === '1' ? '0' : '1');
-        };
-
-        add_delim(s);
         
-        for (let i = 0; i < tools.customdPrefixList.length; i++) {
-            let num = tools.customdPrefixList[i];
-            let fn = tools.customdFileFormat.format(num.toString());
-            let name = _('custom.d script #' + num);
-            o = s.taboption(tabname, form.Button, '_customd_file%d_btn'.format(num), name);
-            o.inputtitle = _('Edit');
-            o.inputstyle = 'edit btn';
-            o.description = fn;
-            let desc = '';
-            if (num == tools.discord_num) {
-                desc = _('Example') + ': ';
-                for (let k = 0; k < tools.discord_url.length; k++) {
-                    let url = tools.discord_url[k];
-                    if (k > 0) desc += ' <br> ';
-                    const filename = url.substring(url.lastIndexOf("/") + 1).split("?")[0];
-                    desc += '<a target=_blank href=' + url + '>' + filename + '</a>';
-                }
-            }
-            o.onclick = () => new tools.fileEditDialog({ file: fn, title: name, desc: desc, rows: 15}).show();
-        }
-
         let map_promise = m.render();
         map_promise.then(node => node.classList.add('fade-in'));
         return map_promise;

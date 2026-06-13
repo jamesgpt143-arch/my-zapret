@@ -400,13 +400,6 @@ return view.extend({
         this.POLL.start(500);  // first step after 500 ms
 
         let page_title = tools.AppName;
-        page_title += ' &nbsp ';
-        if (pkgdict[tools.appName] === undefined || pkgdict[tools.appName] == '') {
-            page_title += 'unknown version';
-        } else {
-            page_title += 'v' + pkgdict[tools.appName];
-            page_title = page_title.replace(/-r1$/, '');
-        }
         let aux1 = E('em');
         let aux2 = E('em');
         if (pkgdict[tools.appName] != pkgdict['luci-app-'+tools.appName]) {
@@ -415,19 +408,10 @@ return view.extend({
             aux2 = E('div', { }, '&nbsp');
         }
         
-        let url1 = 'https://github.com/bol-van/'+tools.appName;
-        let url2 = 'https://github.com/remittor/zapret-openwrt';
-
         return E([
             E('h2', { 'class': 'fade-in' }, page_title),
             aux1,
             aux2,
-            E('div', { 'class': 'cbi-section-descr fade-in' },
-                E('a', { 'href': url1, 'target': '_blank' }, url1),
-            ),
-            E('div', { 'class': 'cbi-section-descr fade-in' },
-                E('a', { 'href': url2, 'target': '_blank' }, url2),
-            ),
             E('div', { 'class': 'cbi-section fade-in' }, [
                 status_string,
             ]),
