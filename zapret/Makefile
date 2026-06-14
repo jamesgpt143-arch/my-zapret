@@ -80,7 +80,6 @@ $(ZAPRET_DIR)/init.d/openwrt/custom.d/20-script.sh
 $(ZAPRET_DIR)/init.d/openwrt/custom.d/50-script.sh
 $(ZAPRET_DIR)/init.d/openwrt/custom.d/60-script.sh
 $(ZAPRET_DIR)/init.d/openwrt/custom.d/90-script.sh
-$(ZAPRET_DIR)/init.d/openwrt/custom.d/99-qos.sh
 endef
 
 $(eval ZAPRET_CONFFILES := $(foreach file,$(ZAPRET_CONFFILES_LIST),$(strip $(file))))

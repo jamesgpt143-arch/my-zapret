@@ -91,9 +91,6 @@ sync_param DISABLE_IPV6
 sync_param FILTER_TTL_EXPIRED_ICMP
 sync_param MODE_FILTER
 sync_param DISABLE_CUSTOM
-sync_param QOS_ENABLE
-sync_param QOS_DOWNLOAD
-sync_param QOS_UPLOAD
 sync_param WS_USER str
 sync_param DAEMON_LOG_ENABLE
 sync_param DAEMON_LOG_SIZE_MAX

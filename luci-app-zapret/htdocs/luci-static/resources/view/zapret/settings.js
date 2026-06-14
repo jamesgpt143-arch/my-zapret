@@ -120,27 +120,7 @@ return view.extend({
         o.rmempty = false;
         o.default = 1;
         
-        /* Bandwidth Limiter tab */
 
-        tabname = 'bandwidth_limiter'; 
-        s.tab(tabname, _('Bandwidth Limiter'));
-
-        o = s.taboption(tabname, form.Flag, 'QOS_ENABLE', _('Enable Speed Limit'));
-        o.rmempty = false;
-        o.default = 0;
-
-        o = s.taboption(tabname, form.Value, 'QOS_DOWNLOAD', _('Download Speed (Mbps)'));
-        o.depends('QOS_ENABLE', '1');
-        o.rmempty = true;
-        o.datatype = 'uinteger';
-        o.default = '0';
-
-        o = s.taboption(tabname, form.Value, 'QOS_UPLOAD', _('Upload Speed (Mbps)'));
-        o.depends('QOS_ENABLE', '1');
-        o.rmempty = true;
-        o.datatype = 'uinteger';
-        o.default = '0';
-        
         let map_promise = m.render();
         map_promise.then(node => node.classList.add('fade-in'));
         return map_promise;
