@@ -1,19 +1,19 @@
 {
-  "generated_at": "2026-06-14T00:54:29Z",
+  "generated_at": "2026-06-14T03:40:52Z",
   "releases": [
     {
       "tag": "v72.20260307",
       "name": "zapret v72.20260307",
       "prerelease": false,
       "created_at": "2026-03-07T05:28:58Z",
-      "updated_at": "2026-06-14T00:54:15Z",
+      "updated_at": "2026-06-14T03:40:41Z",
       "published_at": "2026-06-12T02:44:27Z",
       "url": "https://github.com/jamesgpt143-arch/my-zapret/releases/tag/v72.20260307",
       "assets": [
         {
-          "url": "https://api.github.com/repos/jamesgpt143-arch/my-zapret/releases/assets/446931749",
-          "id": 446931749,
-          "node_id": "RA_kwDOS4HOls4ao6Ml",
+          "url": "https://api.github.com/repos/jamesgpt143-arch/my-zapret/releases/assets/447011677",
+          "id": 447011677,
+          "node_id": "RA_kwDOS4HOls4apNtd",
           "name": "zapret_v72.20260307_aarch64_cortex-a53.zip",
           "label": "",
           "uploader": {
@@ -40,10 +40,10 @@
           "content_type": "application/zip",
           "state": "uploaded",
           "size": 433821,
-          "digest": "sha256:9f14890da140b10bf0ed295b2eeaf3ae053db9ccfdb055801f779c2e84d1ff3e",
+          "digest": "sha256:962bc81a71faad561ac8f88e1eb83ec7b8257d0118e4fd82e308c1eac3bf5a73",
           "download_count": 0,
-          "created_at": "2026-06-14T00:54:15Z",
-          "updated_at": "2026-06-14T00:54:15Z",
+          "created_at": "2026-06-14T03:40:41Z",
+          "updated_at": "2026-06-14T03:40:41Z",
           "browser_download_url": "https://github.com/jamesgpt143-arch/my-zapret/releases/download/v72.20260307/zapret_v72.20260307_aarch64_cortex-a53.zip"
         }
       ]
