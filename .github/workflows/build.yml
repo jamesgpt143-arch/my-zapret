@@ -236,6 +236,12 @@ jobs:
         id: prepare
         working-directory: ${{ env.SDKDIR }}
         run: |
+          TAG_VERSION="${{ needs.check.outputs.tag }}"
+          if [[ "$TAG_VERSION" == v* ]]; then
+            TAG_VERSION="${TAG_VERSION#v}"
+            sed -i "s/^PKG_VERSION:=.*/PKG_VERSION:=$TAG_VERSION/g" $PKGDIR/luci-app-zapret*/Makefile
+            sed -i "s/^PKG_VERSION:=.*/PKG_VERSION:=$TAG_VERSION/g" $PKGDIR/zapret/Makefile
+          fi
           MKFN=$( ls -1 $PKGDIR/luci-app-zapret*/Makefile )
           PKGVER=$( grep -s '^PKG_VERSION:=.*' $MKFN | cut -d'=' -f2 )
           PKGREL=$( grep -s '^PKG_RELEASE:=.*' $MKFN | cut -d'=' -f2 )
