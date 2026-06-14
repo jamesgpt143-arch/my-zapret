@@ -1,5 +1,49 @@
 [
   {
+    "url": "https://api.github.com/repos/jamesgpt143-arch/my-zapret/releases/339073855",
+    "assets_url": "https://api.github.com/repos/jamesgpt143-arch/my-zapret/releases/339073855/assets",
+    "upload_url": "https://uploads.github.com/repos/jamesgpt143-arch/my-zapret/releases/339073855/assets{?name,label}",
+    "html_url": "https://github.com/jamesgpt143-arch/my-zapret/releases/tag/v1.0.5",
+    "id": 339073855,
+    "author": {
+      "login": "jamesgpt143-arch",
+      "id": 231881275,
+      "node_id": "U_kgDODdI6Ow",
+      "avatar_url": "https://avatars.githubusercontent.com/u/231881275?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/jamesgpt143-arch",
+      "html_url": "https://github.com/jamesgpt143-arch",
+      "followers_url": "https://api.github.com/users/jamesgpt143-arch/followers",
+      "following_url": "https://api.github.com/users/jamesgpt143-arch/following{/other_user}",
+      "gists_url": "https://api.github.com/users/jamesgpt143-arch/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/jamesgpt143-arch/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/jamesgpt143-arch/subscriptions",
+      "organizations_url": "https://api.github.com/users/jamesgpt143-arch/orgs",
+      "repos_url": "https://api.github.com/users/jamesgpt143-arch/repos",
+      "events_url": "https://api.github.com/users/jamesgpt143-arch/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/jamesgpt143-arch/received_events",
+      "type": "User",
+      "user_view_type": "public",
+      "site_admin": false
+    },
+    "node_id": "RE_kwDOS4HOls4UNds_",
+    "tag_name": "v1.0.5",
+    "target_commitish": "main",
+    "name": "bandwith limiter",
+    "draft": false,
+    "immutable": false,
+    "prerelease": false,
+    "created_at": "2026-06-13T01:41:17Z",
+    "updated_at": "2026-06-14T00:25:03Z",
+    "published_at": "2026-06-14T00:25:03Z",
+    "assets": [
+
+    ],
+    "tarball_url": "https://api.github.com/repos/jamesgpt143-arch/my-zapret/tarball/v1.0.5",
+    "zipball_url": "https://api.github.com/repos/jamesgpt143-arch/my-zapret/zipball/v1.0.5",
+    "body": ""
+  },
+  {
     "url": "https://api.github.com/repos/jamesgpt143-arch/my-zapret/releases/338344850",
     "assets_url": "https://api.github.com/repos/jamesgpt143-arch/my-zapret/releases/338344850/assets",
     "upload_url": "https://uploads.github.com/repos/jamesgpt143-arch/my-zapret/releases/338344850/assets{?name,label}",
@@ -716,7 +760,7 @@
         "state": "uploaded",
         "size": 402695,
         "digest": "sha256:161bc66af9ce4b126b6532ec9e68325e7f562505e9f9cdad986107198cd184c4",
-        "download_count": 0,
+        "download_count": 2,
         "created_at": "2026-06-12T11:34:08Z",
         "updated_at": "2026-06-12T11:34:08Z",
         "browser_download_url": "https://github.com/jamesgpt143-arch/my-zapret/releases/download/v72.20260307/zapret_v72.20260307_mipsel_24kc.zip"

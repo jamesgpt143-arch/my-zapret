@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-06-12T11:34:21Z",
+  "generated_at": "2026-06-14T00:25:11Z",
   "releases": [
     {
       "tag": "v72.20260307",
@@ -41,7 +41,7 @@
           "state": "uploaded",
           "size": 402695,
           "digest": "sha256:161bc66af9ce4b126b6532ec9e68325e7f562505e9f9cdad986107198cd184c4",
-          "download_count": 0,
+          "download_count": 2,
           "created_at": "2026-06-12T11:34:08Z",
           "updated_at": "2026-06-12T11:34:08Z",
           "browser_download_url": "https://github.com/jamesgpt143-arch/my-zapret/releases/download/v72.20260307/zapret_v72.20260307_mipsel_24kc.zip"
