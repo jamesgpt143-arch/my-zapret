@@ -1,19 +1,19 @@
 {
-  "generated_at": "2026-06-14T03:52:55Z",
+  "generated_at": "2026-06-14T04:54:18Z",
   "releases": [
     {
       "tag": "v72.20260307",
       "name": "zapret v72.20260307",
       "prerelease": false,
       "created_at": "2026-03-07T05:28:58Z",
-      "updated_at": "2026-06-14T03:40:41Z",
+      "updated_at": "2026-06-14T04:54:07Z",
       "published_at": "2026-06-12T02:44:27Z",
       "url": "https://github.com/jamesgpt143-arch/my-zapret/releases/tag/v72.20260307",
       "assets": [
         {
-          "url": "https://api.github.com/repos/jamesgpt143-arch/my-zapret/releases/assets/447011673",
-          "id": 447011673,
-          "node_id": "RA_kwDOS4HOls4apNtZ",
+          "url": "https://api.github.com/repos/jamesgpt143-arch/my-zapret/releases/assets/447046318",
+          "id": 447046318,
+          "node_id": "RA_kwDOS4HOls4apWKu",
           "name": "zapret_v72.20260307_arm_fa526.zip",
           "label": "",
           "uploader": {
@@ -40,10 +40,10 @@
           "content_type": "application/zip",
           "state": "uploaded",
           "size": 417771,
-          "digest": "sha256:6aee26d98d2a7e529652fbf2c0a50ea421388b83eb86117d4ced826d03b8d038",
+          "digest": "sha256:6154f87eed4777309d2a6ec6675521a62358ce87a2d527ef8da86c7d32055582",
           "download_count": 0,
-          "created_at": "2026-06-14T03:40:41Z",
-          "updated_at": "2026-06-14T03:40:41Z",
+          "created_at": "2026-06-14T04:54:06Z",
+          "updated_at": "2026-06-14T04:54:07Z",
           "browser_download_url": "https://github.com/jamesgpt143-arch/my-zapret/releases/download/v72.20260307/zapret_v72.20260307_arm_fa526.zip"
         }
       ]
