@@ -121,7 +121,6 @@ jobs:
 
   build:
     needs: [ check, var ]
-    #if: needs.check.outputs.is_active == 'true'
     name: "${{ matrix.branch }}: ${{ matrix.arch }}"
     runs-on: ubuntu-24.04
     strategy:
@@ -209,9 +208,6 @@ jobs:
               echo "PKGTYPE=apk" >> $GITHUB_ENV
           fi
           mkdir -p ./logs
-          #echo ============== $SDKDIR ======================
-          #ls -la $SDKDIR
-          #echo ----------------------------------------------
           echo "FAKE_BUILD=$FAKE_BUILD" >> $GITHUB_ENV
           echo "ARCH_TAG=$ARCH_TAG" >> $GITHUB_ENV
           echo "BRANCH=$BRANCH" >> $GITHUB_ENV
@@ -221,12 +217,8 @@ jobs:
         if: false
         working-directory: ${{ env.SDKDIR }}
         run: |
-          # gpg --verbose --recv-keys 0x1D53D1877742E911
-          # gpg --verbose --import <(wget -qO- 'https://git.openwrt.org/?p=keyring.git;a=blob_plain;f=gpg/0x1D53D1877742E911.asc')
           gpg --verbose --import <(wget -qO- 'https://raw.githubusercontent.com/openwrt/keyring/refs/heads/master/gpg/0x1D53D1877742E911.asc')
-          # disable check signatures
           sed -i 's/gpg --/#gpg --/g' setup.sh
-          # disable cleanup keys
           sed -r -i 's/^rm.+//' setup.sh
           ./setup.sh
           ls -lh
@@ -290,10 +282,7 @@ jobs:
         env:
           ARCH_TAG: ${{ matrix.arch }}
         run: |
-          PKGLIST="package/zapret-openwrt/zapret/compile"
-          if [ "$ARCH_TAG" = "$LUCI_ARCH" ]; then
-              PKGLIST="$PKGLIST package/zapret-openwrt/luci-app-zapret/compile"
-          fi
+          PKGLIST="package/zapret-openwrt/zapret/compile package/zapret-openwrt/luci-app-zapret/compile"
           MAKE_JOBS=$(nproc)
           echo "$MAKE_JOBS thread compile"
           if [ "$MAX_SPEED" != "true" ]; then
@@ -325,10 +314,6 @@ jobs:
           SIGN_KEY: ${{ secrets.SIGN_PRIVATE_KEY }}
         run: |
           find ./bin/packages/*/base -type f ! -regex ".*\(zapret\).*\.[ai]pk$" -delete
-          #echo ">>>>>>> build a repository index to make the output directory usable as local OPKG source"
-          #ln -s `which usign` staging_dir/host/bin/usign
-          #echo "$SIGN_KEY" | base64 -d > key-build
-          #make package/index
           OUTDIR=$GITHUB_WORKSPACE/$PKGTYPE-$ARCH_TAG
           mkdir -p $OUTDIR
           cp -R ./bin/packages/*/base/. $OUTDIR/
